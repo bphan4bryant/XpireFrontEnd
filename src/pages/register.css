@@ -1,5 +1,15 @@
 .register-page {
     min-height: 100vh;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+/*
+    this is a media query, it will only apply to mobile
+*/
+@media screen and (max-width: 850px) {
+    .register-page {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
