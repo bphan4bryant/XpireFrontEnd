@@ -1,4 +1,5 @@
 import {Table} from 'react-bootstrap'
+import './InventoryTable.css'
 
 
 
@@ -6,7 +7,7 @@ function InventoryTable() {
 
     return(
         <>
-            <Table>
+            <Table className='inventory-table'>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -16,6 +17,15 @@ function InventoryTable() {
                         <th>Delete</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr>
+                        <td>Carrot</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>X</td>
+                        <td>Del</td>
+                    </tr>
+                </tbody>
             </Table>
         </>
     )
