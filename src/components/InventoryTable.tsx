@@ -15,6 +15,7 @@ function InventoryTable() {
                         <th>Points</th>
                         <th>Expired</th>
                         <th>Delete</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,7 @@ function InventoryTable() {
                         <td>1</td>
                         <td>X</td>
                         <td>Del</td>
+                        <td>Pencil</td>
                     </tr>
                 </tbody>
             </Table>

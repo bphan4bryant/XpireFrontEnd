@@ -6,11 +6,11 @@ function Inventory() {
     
     return (
         <>
-        <Container fluid>
+        <Container>
             <Row>
-                <Button>Leaderboard</Button>
-                <Button>Profile</Button>
-                <Button>Save</Button>
+                <Col><Button>Leaderboard</Button></Col>
+                <Col><Button>Profile</Button></Col>
+                <Col><Button>Save</Button></Col>
             </Row>
         </Container>
         <Container>
