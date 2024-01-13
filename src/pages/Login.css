@@ -7,26 +7,32 @@
 }
 
 .Login-background {
-    background-color: #DBDBDC;
+    /*background-color: #DBDBDC;*/
+    background-image: url("kitchenbackground.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
+    max-width: auto;
+    max-height: 100%;
+    background-attachment:fixed;
 }
 
 .Login-box {
     width: 420px;
-    box-shadow: rgb(2 4 6 / 26%) 1px 1px 10px;
-    padding-top: 100px;
-    padding-bottom: 160px;
-    border-radius: 8px;
-    background-color: #74A0C8;
+    box-shadow: rgb(2 4 6 / 80%) 1px 1px 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-radius: 30px;
+    background-color: cadetblue;
 }
 
 .Login-title {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 10px;
     font-size: 34px;
     color: black;
-    font-weight: 800;
+    font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -34,7 +40,8 @@
     text-align: left;
     margin-left: 60px;
     margin-right: 60px;
-
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
 
 .Login-submit {
@@ -44,6 +51,36 @@
 }
 
 .Login-image {
-    width: 150px;
+    width: 350px;
     height: auto;
+}
+
+.Login-entry-box {
+    background-color: antiquewhite;
+    background-color: set;
+}
+
+.Login-submit-button {
+    background-color: #FF841A;
+    width: 300px;
+    margin-top:-20px
+}
+
+.Login-sign-up {
+    align-items: center;
+}
+
+.Login-sign-up-link {
+    color:#FF841A;
+    font-weight: 700;
+}
+
+.Login-forgot {
+    margin-top: 5px;
+    margin-left: 160px;
+}
+
+.Login-forgot-link {
+    color:#FF841A;
+    font-weight: 700;
 }
