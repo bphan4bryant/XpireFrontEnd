@@ -1,13 +1,26 @@
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import InventoryTable from '../components/InventoryTable'
 import {useEffect, useState} from 'react'
+import axios from 'axios'
 import './Inventory.css'
+import { Ingredient } from '../types/types'
 
 function Inventory() {
-    const [thing, setThing] = useState([])
+    const [Inventory, setInventory] = useState<Ingredient[]>([])
+
+    const client = axios.create({
+        baseURL: import.meta.env.VITE_BASE_URL
+    });
+
+    const fetchInventory = async() => {
+        const url = '/users/' + import.meta.env.VITE_DEFAULT_USER + '/ingredients/inventory' //Change default user to actual user field
+        const response = await client.get(url)
+        .then((res) => {console.log(res.data); setInventory(res.data.data)})
+        .catch((err) => console.log(err))
+    }
 
     useEffect(() => {
-        setThing()
+        fetchInventory()
     }, [])
     
     return (
@@ -19,7 +32,7 @@ function Inventory() {
         </Container>
         <Container>
             <Row>
-                <InventoryTable/>
+                <InventoryTable data={Inventory}/>
             </Row>
         </Container>
         </>

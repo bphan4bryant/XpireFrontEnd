@@ -1,3 +1,7 @@
 .inventory-table {
     height: 80vh;
 }
+
+.inventory-table-row {
+    max-height: 10%
+}
