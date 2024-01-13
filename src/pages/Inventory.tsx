@@ -4,6 +4,11 @@ import {useEffect, useState} from 'react'
 import './Inventory.css'
 
 function Inventory() {
+    const [thing, setThing] = useState([])
+
+    useEffect(() => {
+        setThing()
+    }, [])
     
     return (
         <>
