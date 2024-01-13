@@ -1,0 +1,22 @@
+.Login-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Login-background {
+    background-color: #DBDBDC;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Login-box {
+    width: 420px;
+    box-shadow: rgb(2 4 6 / 26%) 1px 1px 10px;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    border-radius: 8px;
+    background-color: #5050c3;
+}
