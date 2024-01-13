@@ -6,11 +6,9 @@ function Inventory() {
     
     return (
         <>
-        <Container>
+        <Container className="py-3">
             <Row>
-                <Col><Button>Leaderboard</Button></Col>
-                <Col><Button>Profile</Button></Col>
-                <Col><Button>Save</Button></Col>
+                <Col><Button className="me-3">Cook</Button><Button className="ms-3">Add</Button></Col>
             </Row>
         </Container>
         <Container>
