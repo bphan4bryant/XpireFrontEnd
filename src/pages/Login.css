@@ -15,10 +15,10 @@
 .Login-box {
     width: 420px;
     box-shadow: rgb(2 4 6 / 26%) 1px 1px 10px;
-    padding-top: 160px;
+    padding-top: 100px;
     padding-bottom: 160px;
     border-radius: 8px;
-    background-color: #5050c3;
+    background-color: #74A0C8;
 }
 
 .Login-title {
@@ -32,5 +32,18 @@
 
 .Login-credentials-title {
     text-align: left;
-    padding-left: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+
+}
+
+.Login-submit {
+    text-align: center;
+    padding: 20px 30px;
+    min-width: 200px;
+}
+
+.Login-image {
+    width: 150px;
+    height: auto;
 }
