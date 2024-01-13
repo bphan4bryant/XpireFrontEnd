@@ -1,0 +1,24 @@
+import {Container, Row, Col, Button} from 'react-bootstrap'
+import InventoryTable from '../components/InventoryTable'
+
+function Inventory() {
+    
+    return (
+        <>
+        <Container fluid>
+            <Row>
+                <Button>Leaderboard</Button>
+                <Button>Profile</Button>
+                <Button>Save</Button>
+            </Row>
+        </Container>
+        <Container>
+            <Row>
+                <InventoryTable/>
+            </Row>
+        </Container>
+        </>
+    )
+}
+
+export default Inventory
