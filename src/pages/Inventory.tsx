@@ -1,5 +1,6 @@
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import InventoryTable from '../components/InventoryTable'
+import {useEffect, useState} from 'react'
 import './Inventory.css'
 
 function Inventory() {
