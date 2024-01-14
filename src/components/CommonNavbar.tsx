@@ -11,7 +11,7 @@ function CommonNavbar() {
         <>
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand href="/">
+                    <Navbar.Brand href="/inventory">
                         <img src={logo} alt="Xpire" width="90em" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
