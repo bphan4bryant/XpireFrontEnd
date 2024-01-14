@@ -1,27 +1,27 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { Ingredient } from '../types/types';
-import { DateToUnix } from '../utils/functions';
+import { Ingredient, Dish } from '../types/types';
+import { useState } from 'react';
 
-function CookingModal(props : {show : boolean, handleClose : () => void}) {
-  const [Name, setName] = useState<string>('')
-  const [Quantity, setQuantity] = useState<number>(0)
-  const [Points, setPoints] = useState<number>(0)
-  const [Month, setMonth] = useState<number>(0)
-  const [Day, setDay] = useState<number>(0)
+function CookingModal(props : {show : boolean, ingredients : Ingredient[], handleClose : () => void, postDish : (data : Dish) => Promise<void>}) {
+    const [dishName, setDishName] = useState('');
 
   const handleSubmit = () => {
-    let ingredient : Ingredient = {
-      name : Name,
-      quantity : Quantity,
-      points : Points,
-      expiration : DateToUnix(Month, Day)
+    let dish : Dish = {
+        name : dishName,
+        user : 'A User',
+        ingredients : props.ingredients,
+        img : 'An Image',
+        date : Date.now(),
+        points : 10 // HARDCODED! CHANGE THIS
     }
+    props.postDish(dish)
     props.handleClose()
-    window.location.reload();
+    // window.location.reload();
   }
+
+  const ingredientList = props.ingredients.map(item => item.name).join(', ')
 
   return (
     <>
@@ -37,9 +37,11 @@ function CookingModal(props : {show : boolean, handleClose : () => void}) {
               <Form.Label>Recipe Name</Form.Label>
               <Form.Control type="text" placeholder="Let (Them) Cook!" onChange={(e) => {
                                     e.preventDefault();
+                                    setDishName(e.target.value)
                                 }}/>
             </Form.Group>
           </Form>
+          <div>Using: {ingredientList}</div>
         </Modal.Body>
         
         <Modal.Footer>
