@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {User} from '../types/types'
 import './Leaderboard.css'
-
+import profile from "./nopfp.jpeg"
 function Leaderboard() {
   const [Leaderboard, setLeaderboard] = useState<User[]>([])
 
@@ -36,7 +36,7 @@ function Leaderboard() {
             {Leaderboard.map((item, i) =>
                 <tr key={item.id}>
                   <th scope="col">{i+1}</th>
-                  <td>{ item.pfp }</td>
+                  <td><img src= {item.pfp} alt='none' width="40em"/></td>
                   <td>{ item.name }</td>
                   <td>{ item.points }</td>
                 </tr>
