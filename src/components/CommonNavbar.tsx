@@ -20,7 +20,7 @@ function CommonNavbar() {
                             <Nav.Link href="/leaderboard" className="fs-5">Leaderboard</Nav.Link>
                             <Nav.Link href="/Inventory" className="fs-5">Inventory</Nav.Link>
                             <Nav.Link href="/profile" className="fs-5">Profile</Nav.Link>
-                            <Nav.Link href="/" className="fs-5">Logout</Nav.Link>
+                            <Nav.Link href="/" className="fs-5" onClick={() => { localStorage.removeItem("JWT") }}>Logout</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
