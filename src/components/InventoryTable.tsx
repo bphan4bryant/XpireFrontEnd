@@ -46,22 +46,22 @@ function InventoryTable(props: { data: Ingredient[], selected: Ingredient[], set
 
     return (
         <>
-                <Table hover className='tb'>
-                    <thead className="thead-light">
-                        <tr>
-                            <th>Select</th>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                            <th>Points</th>
-                            <th>Expiration</th>
-                            <th>Expired</th>
-                            <th>Delete</th>
-                            </tr>
-                    </thead>
-                    <tbody >
-                        {inventoryItems}
-                    </tbody >
-                </Table >
+            <Table hover className='tb'>
+                <thead className="thead-light">
+                    <tr>
+                        <th>Select</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Points</th>
+                        <th>Expiration</th>
+                        <th>Expired</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    {inventoryItems}
+                </tbody >
+            </Table >
         </>
     )
 }
