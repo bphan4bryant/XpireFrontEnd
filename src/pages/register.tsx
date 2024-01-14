@@ -39,7 +39,7 @@ export default function RegisterPage() {
         // send this object to register endpoint
 
         try {
-            await axios.post(import.meta.env.BASE_URL + "/account", {
+            await axios.post(import.meta.env.VITE_BASE_URL + "/account", {
                 "user": newUser,
                 "password": password
             });
