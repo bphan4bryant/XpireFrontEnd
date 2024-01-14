@@ -11,6 +11,7 @@ function Statistic(props: {title: string, number: number}) {
     return(
         <div>
             <h3>{props.title}</h3>
+            <FontAwesomeIcon icon={faBasketShopping} />
             <div>
             {props.number}
             </div>
@@ -35,7 +36,7 @@ function Profile() {
                         {/* email */}
                         <h3 className="profile-info">Email</h3>
                         {/* points */}
-                        <h3 className="profile-info">Points</h3>
+                        <h3 className="profile-info">Points: 10</h3>
 
                         <div className="profile-grid">
                             <Statistic title="Bought" number={5}/>
