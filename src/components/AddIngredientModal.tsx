@@ -23,7 +23,7 @@ function AddIngredientModal(props: { show: boolean, handleClose: () => void, pos
     }
     props.postIngredient(ingredient)
     props.handleClose()
-    // window.location.reload();
+    window.location.reload();
   }
 
   return (
