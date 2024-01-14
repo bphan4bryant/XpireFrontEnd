@@ -51,7 +51,7 @@ export interface Dish {
     /**
      * list of ingredients used to make it
      */
-    ingredients: string[],
+    ingredients: Ingredient[],
     /**
      * a picture of the dish
      */
@@ -60,6 +60,24 @@ export interface Dish {
      * unix time stamp of when this dish was cooked
      */
     date: number,
+
+    /**
+     * number of points this dish is worth
+     */
+    points: number,
+}
+
+export function isDish(value: any): value is Dish {
+    return (
+        typeof value === 'object' &&
+        typeof value.name === 'string' &&
+        typeof value.user === 'number' &&
+        Array.isArray(value.ingredients) &&
+        value.ingredients.every((ingredient: any) => isIngredient(ingredient)) &&
+        typeof value.img === 'string' &&
+        typeof value.date === 'number' &&
+        typeof value.points === 'number'
+    );
 }
 
 export interface Ingredient {
@@ -81,11 +99,6 @@ export interface Ingredient {
     points: number,
 }
 
-export interface Auth {
-    id: string,
-    password: string
-}
-
 export function isIngredient(value: any): value is Ingredient {
     return (
         typeof value === 'object' &&
@@ -94,6 +107,10 @@ export function isIngredient(value: any): value is Ingredient {
         typeof value.expiration === 'number' &&
         typeof value.points === 'number'
     );
+}
+export interface Auth {
+    id: string,
+    password: string
 }
 
 const userIngredientTypeArray = ["inventory", "trashed"] as const;
