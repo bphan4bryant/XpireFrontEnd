@@ -1,5 +1,6 @@
 import './Login.css'
 import Form from 'react-bootstrap/Form';
+import {Link} from "react-router-dom"
 
 function Login() {
   return (
@@ -55,6 +56,7 @@ function Login() {
                         Don't have an account? <a className="Login-sign-up-link" href="#">Sign Up!</a>
                     </p>
                 </Form>
+                <Link to={'/inventory'}>Inventory</Link>
             </form>
         </div>
     </div>
