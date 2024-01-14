@@ -56,3 +56,8 @@ i {
     top: 18%;
     right: 5%;
 }
+
+.error {
+    color: #e60000;
+    font-weight: bold;
+}
