@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css'
 import Form from 'react-bootstrap/Form';
-import {Link} from "react-router-dom"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import LandingBg from '../components/LandingBg';
@@ -41,7 +40,7 @@ function Login() {
 
     return (
         <LandingBg>
-            <img className="Login-image" src="./Xpire.png" alt="logo" />
+            <img className="Login-image" src="../public/Xpire.png" alt="logo" />
             {/* <h3 className="Login-title">Sign In</h3> */}
             <Form>
                 <div className="Login-credentials-title">
