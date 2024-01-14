@@ -1,16 +1,46 @@
 import { useState } from 'react'
 import './App.css'
-import Inventory from './pages/Inventory'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import CommonNavbar from './components/CommonNavbar'
+import Login from './pages/Login'
+
+import {
+  createBrowserRouter, RouterProvider,
+} from "react-router-dom";
+import Inventory from './pages/Inventory';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />
+  },
+  {
+    path: "/register",
+    element: <div>Register</div>
+  },
+  {
+    path: "/forgot",
+    element: <div>Forgot Password</div>
+  },
+  {
+    path: "/inventory",
+    element: <Inventory />
+  },
+  {
+    path: "/profile",
+    element: <div>Profile</div>
+  },
+  {
+    path: "/leaderboard",
+    element: <div>Leaderboard</div>
+  },
+
+])
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <CommonNavbar/>
-      <Inventory/>
+      <RouterProvider router={router} />
     </>
   )
 }
