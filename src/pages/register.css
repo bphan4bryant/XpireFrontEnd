@@ -1,7 +1,7 @@
 .register-page {
-    min-height: 100vh;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0%;
 }
 
 /*
@@ -12,6 +12,47 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+}
+
+.register-entry-title {
+    display: block;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.register-entry-box {
+    background-color: antiquewhite;
+    background-color: set;
+}
+
+.register-submit {
+    background-color: #FF841A;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.register-preview-title {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.register-create-account {
+    margin-bottom: 20px;
+}
+
+.register-pass-wrapper {
+    position: relative;
+    display: flex;
+    margin-bottom: 14px;
+}
+
+i {
+    position:absolute;
+    top: 18%;
+    right: 5%;
 }
 
 .error {

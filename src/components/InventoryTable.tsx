@@ -46,8 +46,8 @@ function InventoryTable(props: { data: Ingredient[], selected: Ingredient[], set
 
     return (
         <>
-            <Table>
-                <thead>
+            <Table hover className='tb'>
+                <thead className="thead-light">
                     <tr>
                         <th>Select</th>
                         <th>Name</th>
@@ -58,7 +58,7 @@ function InventoryTable(props: { data: Ingredient[], selected: Ingredient[], set
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     {inventoryItems}
                 </tbody >
             </Table >

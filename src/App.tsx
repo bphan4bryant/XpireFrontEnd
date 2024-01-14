@@ -3,6 +3,7 @@ import './App.css'
 import Login from './pages/Login'
 import LandingBg from './components/LandingBg'
 import RegisterPage from './pages/register'
+import Profile from './pages/profiles'
 
 import {
   createBrowserRouter, RouterProvider,
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile",
-    element: <div>Profile</div>
+    element: <Profile />
   },
   {
     path: "/leaderboard",

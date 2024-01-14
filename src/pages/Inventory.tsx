@@ -110,20 +110,22 @@ function Inventory() {
     return (
         <>
             <CommonNavbar />
-            <AddIngredientModal show={showAdd} handleClose={handleCloseAdd} postIngredient={postIngredient} />
-            <CookingModal show={showCook} ingredients={selected} handleClose={handleCloseCook} postDish={postDish} />
-            <Container className="py-3">
-                <Row>
-                    <Col><Button className="me-3" disabled={selected.length <= 0} onClick={handleShowCook}>Cook</Button><Button onClick={handleShowAdd} className="ms-3">Add</Button></Col>
-                </Row>
-            </Container>
-            <Container>
-                <Row>
-                    {
-                        Inventory ? <InventoryTable data={Inventory} selected={selected} setSelected={setSelected} deleteHandler={trashIngredient} /> : null
-                    }
-                </Row>
-            </Container>
+            <div className='Inventory-background'> 
+                <AddIngredientModal show={showAdd} handleClose={handleCloseAdd} postIngredient={postIngredient} />
+                <CookingModal show={showCook} ingredients={selected} handleClose={handleCloseCook} postDish={postDish} />
+                <Container className="py-3">
+                    <Row>
+                        <Col><Button className="me-3" disabled={selected.length <= 0} onClick={handleShowCook}>Cook</Button><Button onClick={handleShowAdd} className="ms-3">Add</Button></Col>
+                    </Row>
+                </Container>
+                <Container>
+                    <Row className='rounded-8'>
+                        {
+                            Inventory ? <InventoryTable data={Inventory} selected={selected} setSelected={setSelected} deleteHandler={trashIngredient} /> : null
+                        }
+                    </Row>
+                </Container>
+            </div>
         </>
     )
 }

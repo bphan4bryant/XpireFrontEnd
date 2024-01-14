@@ -1,0 +1,18 @@
+.Inventory-background{
+    background-image: url("Inventorybackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.rounded-8{
+    background-image: url("cuttingboard.jpg");
+    border-radius: 12px;
+    border: 1.5rem solid rgba(57, 49, 49, 0.086);
+    box-shadow: rgb( 2 4 6 / 80%) 1px 1px;
+    /*border-color:rgb(23, 31, 39);*/
+}
