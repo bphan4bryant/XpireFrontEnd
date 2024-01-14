@@ -1,7 +1,9 @@
 .register-page {
     min-height: 100vh;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0%;
+    margin-bottom: -30%;
 }
 
 /*
@@ -12,4 +14,28 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+}
+
+.register-entry-title {
+    display: block;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.register-entry-box {
+    background-color: antiquewhite;
+    background-color: set;
+}
+
+.register-submit {
+    background-color: #FF841A;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.register-preview-title {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
