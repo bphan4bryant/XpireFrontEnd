@@ -20,7 +20,7 @@ function Login() {
 
         // baseURL: import.meta.env.VITE_BASE_URL + '/users/' + import.meta.env.VITE_DEFAULT_USER //Change default user to actual user field
         try {
-            const res = await axios.post("http://localhost:5000/login", {
+            const res = await axios.post(import.meta.env.BASE_URL + "/login", {
                 "id": username,
                 "password": password
             });
