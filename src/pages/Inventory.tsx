@@ -12,15 +12,16 @@ function Inventory() {
         baseURL: import.meta.env.VITE_BASE_URL
     });
 
-    const fetchInventory = async() => {
+    const getInventory = async() => {
         const url = '/users/' + import.meta.env.VITE_DEFAULT_USER + '/ingredients/inventory' //Change default user to actual user field
-        const response = await client.get(url)
+        
+        await client.get(url)
         .then((res) => {console.log(res.data); setInventory(res.data.data)})
         .catch((err) => console.log(err))
     }
 
     useEffect(() => {
-        fetchInventory()
+        getInventory()
     }, [])
     
     return (
