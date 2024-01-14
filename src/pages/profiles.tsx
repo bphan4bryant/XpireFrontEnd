@@ -7,12 +7,12 @@ import { faCarrot } from '@fortawesome/free-solid-svg-icons'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 
-function Statistic(props: {title: string}) {
+function Statistic(props: {title: string, number: number}) {
     return(
         <div>
             <h3>{props.title}</h3>
             <div>
-            5
+            {props.number}
             </div>
         </div>
         )
@@ -30,20 +30,18 @@ function Profile() {
                             {/* profile picture */}
                             <ProfilePicture img="./placeholder-image.jpg"/>
                         </div>
-                    {/* name */}
-                    <h3 className="profile-info">Name</h3>
-                    {/* email */}
-                    <h3 className="profile-info">Email</h3>
-                    {/* points */}
-                    <h3 className="profile-info">Points</h3>
+                        {/* name */}
+                        <h3 className="profile-info">Name</h3>
+                        {/* email */}
+                        <h3 className="profile-info">Email</h3>
+                        {/* points */}
+                        <h3 className="profile-info">Points</h3>
 
-                    <div className="profile-grid">
-                    <Statistic title="Bought" />
-                    <Statistic title="Cooked" />
-                    <Statistic title="Trashed" />
-                    {/* <FontAwesomeIcon icon={faBasketShopping} /> */}
-                    </div>
-
+                        <div className="profile-grid">
+                            <Statistic title="Bought" number={5}/>
+                            <Statistic title="Cooked" number={6}/>
+                            <Statistic title="Trashed" number={7}/>
+                        </div>
                     </div>
                 </div>
         </div>
