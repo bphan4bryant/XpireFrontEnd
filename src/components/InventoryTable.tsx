@@ -3,7 +3,7 @@ import './InventoryTable.css'
 import { Ingredient } from '../types/types.ts'
 import { UnixToDate } from '../utils/functions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons"
+import { faTrashCan, faXmarkCircle, faBowlFood } from "@fortawesome/free-solid-svg-icons"
 import Form from 'react-bootstrap/Form'
 function InventoryTable(props: { data: Ingredient[], selected: Ingredient[], setSelected: (data: Ingredient[]) => void, deleteHandler: (data: Ingredient) => Promise<void> }) {
     function addSelected(item: Ingredient) {
@@ -18,30 +18,42 @@ function InventoryTable(props: { data: Ingredient[], selected: Ingredient[], set
         props.setSelected(tempSelected)
     }
 
-    const inventoryItems = props.data.map((item, i) =>
-        <tr key={i}>
-            <td><Form.Check
-                type={"checkbox"}
-                onChange={(e) => {
-                    if (e.target.checked) {
-                        addSelected(item)
-                    } else {
-                        removeSelected(item)
-                    }
-                }}
-            />
-            </td>
-            <td>{item.name}</td>
-            <td>{item.quantity}</td>
-            <td>{item.points}</td>
-            <td>{UnixToDate(item.expiration)}</td>
-            <td>X</td>
-            <td>
-                <Button variant="danger" onClick={(e) => props.deleteHandler(item)}>
-                    <FontAwesomeIcon icon={faTrashCan} />
-                </Button>
-            </td>
-        </tr>
+    const inventoryItems = props.data.map((item, i) => {
+        // calculatte if it is expired
+        const currentDate = new Date();
+        const unixTimestamp = Math.floor(currentDate.getTime() / 1000);
+        console.log(unixTimestamp)
+        console.log(item.expiration)
+        const isExpired = unixTimestamp > item.expiration;
+
+        return (
+            <tr key={i}>
+                <td><Form.Check
+                    type={"checkbox"}
+                    onChange={(e) => {
+                        if (e.target.checked) {
+                            addSelected(item)
+                        } else {
+                            removeSelected(item)
+                        }
+                    }}
+                />
+                </td>
+                <td>{item.name}</td>
+                <td>{item.quantity}</td>
+                {/* <td>{item.points}</td> */}
+                <td>{UnixToDate(item.expiration)}</td>
+                <td>
+                    {isExpired ? <FontAwesomeIcon icon={faXmarkCircle} color='red' /> : <FontAwesomeIcon icon={faBowlFood} />}
+                </td>
+                <td>
+                    <Button variant="danger" onClick={(e) => props.deleteHandler(item)}>
+                        <FontAwesomeIcon icon={faTrashCan} />
+                    </Button>
+                </td>
+            </tr>
+        )
+    }
     )
 
     return (
@@ -52,7 +64,7 @@ function InventoryTable(props: { data: Ingredient[], selected: Ingredient[], set
                         <th>Select</th>
                         <th>Name</th>
                         <th>Quantity</th>
-                        <th>Points</th>
+                        {/* <th>Points</th> */}
                         <th>Expiration</th>
                         <th>Expired</th>
                         <th>Delete</th>

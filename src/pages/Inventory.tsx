@@ -103,6 +103,9 @@ function Inventory() {
         })
             .then((res) => {
                 console.log(res)
+                if (res.status === 201) {
+                    window.location.reload()
+                }
             })
             .catch((err) => console.log(err))
     }
@@ -110,7 +113,7 @@ function Inventory() {
     return (
         <>
             <CommonNavbar />
-            <div className='Inventory-background'> 
+            <div className='Inventory-background'>
                 <AddIngredientModal show={showAdd} handleClose={handleCloseAdd} postIngredient={postIngredient} />
                 <CookingModal show={showCook} ingredients={selected} handleClose={handleCloseCook} postDish={postDish} />
                 <Container className="py-3">
