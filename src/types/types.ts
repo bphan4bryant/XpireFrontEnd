@@ -60,6 +60,23 @@ export interface Dish {
      * unix time stamp of when this dish was cooked
      */
     date: number,
+
+    /**
+     * number of points this dish is worth
+     */
+    points: number,
+}
+
+export function isDish(value: any): value is Dish {
+    return (
+        typeof value === 'object' &&
+        typeof value.name === 'string' &&
+        typeof value.user === 'number' &&
+        typeof value.ingredients === 'string' &&
+        typeof value.img === 'string' &&
+        typeof value.date === 'number' &&
+        typeof value.points === 'number'
+    );
 }
 
 export interface Ingredient {

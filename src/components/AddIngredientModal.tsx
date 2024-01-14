@@ -20,16 +20,16 @@ function AddIngredientModal(props : {show : boolean, handleClose : () => void, p
       points : Points,
       expiration : DateToUnix(Month, Day)
     }
-    console.log(typeof ingredient, typeof ingredient.name, typeof ingredient.quantity, typeof ingredient.points, typeof ingredient.expiration)
     props.postIngredient(ingredient)
     props.handleClose()
+    window.location.reload();
   }
 
   return (
     <>
       <Modal show={props.show} onHide={props.handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Header>
+          <Modal.Title>Add Ingredient</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>

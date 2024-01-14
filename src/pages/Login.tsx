@@ -41,7 +41,7 @@ function Login() {
 
     return (
         <LandingBg>
-            <img className="Login-image" src="./Xpire.png" alt="logo" />
+            <img className="Login-image" src="../public/Xpire.png" alt="logo" />
             {/* <h3 className="Login-title">Sign In</h3> */}
             <Form>
                 <div className="Login-credentials-title">
