@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import Login from './pages/Login'
+import LandingBg from './components/LandingBg'
+import RegisterPage from './pages/register'
 
 import {
   createBrowserRouter, RouterProvider,
@@ -14,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <div>Register</div>
+    element: <RegisterPage />
   },
   {
     path: "/forgot",
