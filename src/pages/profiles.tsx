@@ -8,6 +8,14 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { User } from '../types/types'
 
+interface UserProfile extends User {
+    statistics: {
+        ingredients: number,
+        dishes: number,
+        trashed: number,
+    }
+}
+
 function Statistic(props: { title: string, number: number, icon: IconDefinition }) {
     return (
         <div>
@@ -24,7 +32,7 @@ function Profile() {
 
     const baseURL = import.meta.env.VITE_BASE_URL + '/users/' + import.meta.env.VITE_DEFAULT_USER;
 
-    const [user, setUser] = useState<User | null>();
+    const [user, setUser] = useState<UserProfile | null>();
 
     const getUserInfo = async () => {
         const token = localStorage.getItem("JWT") ?? ""
@@ -65,9 +73,9 @@ function Profile() {
                     <h3 className="profile-info">Points: {user?.points}</h3>
 
                     <div className="profile-grid">
-                        <Statistic title="Bought" number={5} icon={faBasketShopping} />
-                        <Statistic title="Cooked" number={6} icon={faCarrot} />
-                        <Statistic title="Trashed" number={7} icon={faTrashCan} />
+                        <Statistic title="Bought" number={user?.statistics.ingredients ?? 0} icon={faBasketShopping} />
+                        <Statistic title="Cooked" number={user?.statistics.dishes ?? 0} icon={faCarrot} />
+                        <Statistic title="Trashed" number={user?.statistics.trashed ?? 0} icon={faTrashCan} />
                     </div>
                 </div>
             </div>
