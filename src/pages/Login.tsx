@@ -1,9 +1,10 @@
 import './Login.css'
 import Form from 'react-bootstrap/Form';
+import LandingBg from '../components/LandingBg';
 
 function Login() {
     return (
-        <>
+        <LandingBg>
             <img className="Login-image" src="./Xpire.png" alt="logo" />
             {/* <h3 className="Login-title">Sign In</h3> */}
             <Form>
@@ -52,7 +53,7 @@ function Login() {
                     Don't have an account? <a className="Login-sign-up-link" href="#">Sign Up!</a>
                 </p>
             </Form>
-        </>
+        </LandingBg>
     )
 }
 

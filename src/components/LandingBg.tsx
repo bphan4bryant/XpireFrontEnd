@@ -1,7 +1,6 @@
 import '../pages/Login.css'
-import Form from 'react-bootstrap/Form';
 
-function LandingBg({ children }: { children: JSX.Element }) {
+function LandingBg({ children }: { children: JSX.Element[] | JSX.Element }) {
     return (
         <div className='Login-background'>
             <div className="Login-box-container">
