@@ -18,8 +18,8 @@ interface UserProfile extends User {
 
 function Statistic(props: { title: string, number: number, icon: IconDefinition }) {
     return (
-        <div>
-            <h3>{props.title}</h3>
+        <div className='profile-grid-item'>
+            <h3 className="profile-count-title">{props.title}</h3>
             <FontAwesomeIcon icon={props.icon} />
             <div>
                 {props.number}
@@ -60,17 +60,15 @@ function Profile() {
             <div className="profile-box-container">
                 {/* navbar */}
                 <div>
-                    <h3 className="profile-title">Profile</h3>
-                    <div>
+                    <h3 className="profile-title">Overview</h3>
                         {/* profile picture */}
                         <ProfilePicture img="./placeholder-image.jpg" />
-                    </div>
                     {/* name */}
                     <h3 className="profile-info">{user?.name}</h3>
                     {/* email */}
                     <h3 className="profile-info">{user?.id}</h3>
                     {/* points */}
-                    <h3 className="profile-info">Points: {user?.points}</h3>
+                    <h3 className="profile-info">Total Points: {user?.points}</h3>
 
                     <div className="profile-grid">
                         <Statistic title="Bought" number={user?.statistics.ingredients ?? 0} icon={faBasketShopping} />

@@ -1,7 +1,6 @@
 .profile-box-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100vw;
 }
 
@@ -18,12 +17,32 @@
 }
 
 .profile-info {
+    font-size: large;
     margin-top: 20px;
 }
 
 .profile-grid {
-    margin-top: 20px;
+
+    font-size: large;
+    grid-auto-rows: 100px;
+    grid-column: 3;
+    column-gap: 50px;
     display: grid;
-    grid-template-columns: 300px 300px 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-template-columns: 200px 200px 200px;
     align-items: center;
+}
+
+.profile-grid-item {
+    border-color: black;
+    border: 4px #FF841A solid;
+    background: #D7D7D7;
+    border-radius: 25px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.profile-count-title {
+    font-size: large;
 }
