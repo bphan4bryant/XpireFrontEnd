@@ -55,19 +55,7 @@ function InventoryTable(props : {data: Ingredient[], selected: Ingredient[], set
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        props.data.map(item =>
-                            <tr>
-                                <td>{item.name}</td>
-                                <td>{item.quantity}</td>
-                                <td>{item.points}</td>
-                                <td>{UnixToDate(item.expiration)}</td>
-                                <td>X</td>
-                                <td>Del</td>
-                                <td>Pencil</td>
-                            </tr>
-                        )
-                    }
+                    {inventoryItems}
                 </tbody>
             </Table>
         </>
