@@ -17,9 +17,10 @@ function CommonNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#home" font-size='400em'>Leaderboard</Nav.Link>
-                    <Nav.Link href="#link">Profile</Nav.Link>
-                    <Nav.Link href="#link">Logout</Nav.Link>
+                    <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
+                    <Nav.Link href="/Inventory">Inventory</Nav.Link>
+                    <Nav.Link href="/profile">Profile</Nav.Link>
+                    <Nav.Link href="/forgot">Logout</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
