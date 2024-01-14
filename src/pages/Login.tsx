@@ -44,7 +44,7 @@ function Login() {
                             />
                         </div>
                         <div className="Login-forgot">
-                            <a className="Login-forgot-link" href="#">Forgot Password?</a>
+                            <a className="Login-forgot-link" href="/forgot">Forgot Password?</a>
                         </div>
                         <div className="Login-submit">
                             <button type="submit" className="Login-submit-button">
@@ -52,7 +52,7 @@ function Login() {
                             </button>
                         </div>
                         <p className="Login-sign-up">
-                            Don't have an account? <a className="Login-sign-up-link" href="#">Sign Up!</a>
+                            Don't have an account? <a className="Login-sign-up-link" href="/register">Sign Up!</a>
                         </p>
                     </Form>
                 </form>
