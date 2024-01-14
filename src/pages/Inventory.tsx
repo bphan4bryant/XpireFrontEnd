@@ -44,22 +44,22 @@ function Inventory() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    
+    //<div className='Inventory-background'></div >
     return (
-        <>
-        <CommonNavbar/>
-        <AddIngredientModal show={show} handleClose={handleClose} postIngredient={postIngredient}/>
-        <Container className="py-3">
-            <Row>
-                <Col><Button className="me-3">Cook</Button><Button onClick={handleShow} className="ms-3">Add</Button></Col>
-            </Row>
-        </Container>
-        <Container>
-            <Row>
-                <InventoryTable data={Inventory}/>
-            </Row>
-        </Container>
-        </>
+        <div className='Inventory-background'>
+            <CommonNavbar/>
+            <AddIngredientModal show={show} handleClose={handleClose} postIngredient={postIngredient}/>
+            <Container className="py-3">
+                <Row>
+                    <Col><Button className="me-3">Cook</Button><Button onClick={handleShow} className="ms-3">Add</Button></Col>
+                </Row>
+            </Container>
+            <Container>
+                <Row className="rounded-8">
+                    <InventoryTable data={Inventory}/>
+                </Row>
+            </Container>
+        </div>
     )
 }
 

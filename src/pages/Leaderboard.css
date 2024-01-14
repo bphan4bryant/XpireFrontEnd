@@ -1,10 +1,24 @@
-.theadcolor {
-    th{
-    background-color: #646cff;
-    color: #646cff;
-    }
+.tb{
+    /* border-radius: 5px; */
+    margin-bottom: 0 !important;
 }
-.tb {
-    height: 30vh;
-    background-color: #646cff;
+.custom-row {
+    background-image: url("cuttingboard.jpg");
+    border-radius: 12px;
+    border: 1.5rem solid rgba(57, 49, 49, 0.086);
+    box-shadow: rgb( 2 4 6 / 100%) 1px 1px 10px;
+}
+
+.custom-contain{
+    padding-top: 5%;
+}
+.Leaderboard-background{
+    background-image: url("carrot.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+    max-height: 100%;
+    max-width: 100%;
+
 }

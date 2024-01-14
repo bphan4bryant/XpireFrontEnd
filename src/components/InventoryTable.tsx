@@ -18,22 +18,22 @@ function InventoryTable(props : {data: Ingredient[]}) {
 
     return(
         <>
-            <Table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Points</th>
-                        <th>Expiration</th>
-                        <th>Expired</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {inventoryItems}
-                </tbody>
-            </Table>
+                <Table hover className='tb'>
+                    <thead className="thead-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Points</th>
+                            <th>Expiration</th>
+                            <th>Expired</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        {inventoryItems}
+                    </tbody>
+                </Table>
         </>
     )
 }
