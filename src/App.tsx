@@ -8,6 +8,7 @@ import {
   createBrowserRouter, RouterProvider,
 } from "react-router-dom";
 import Inventory from './pages/Inventory';
+import Leaderboard from './pages/Leaderboard';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/leaderboard",
-    element: <div>Leaderboard</div>
+    element: <Leaderboard/>
   },
 
 ])

@@ -1,6 +1,6 @@
-import {Table} from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 import './InventoryTable.css'
-import {Ingredient} from '../types/types.ts'
+import { Ingredient } from '../types/types.ts'
 import { UnixToDate } from '../utils/functions'
 import Form from 'react-bootstrap/Form'
 
@@ -40,7 +40,7 @@ function InventoryTable(props : {data: Ingredient[], selected: Ingredient[], set
         </tr>
         )
 
-    return(
+    return (
         <>
             <Table>
                 <thead>
@@ -55,7 +55,19 @@ function InventoryTable(props : {data: Ingredient[], selected: Ingredient[], set
                     </tr>
                 </thead>
                 <tbody>
-                    {inventoryItems}
+                    {
+                        props.data.map(item =>
+                            <tr>
+                                <td>{item.name}</td>
+                                <td>{item.quantity}</td>
+                                <td>{item.points}</td>
+                                <td>{UnixToDate(item.expiration)}</td>
+                                <td>X</td>
+                                <td>Del</td>
+                                <td>Pencil</td>
+                            </tr>
+                        )
+                    }
                 </tbody>
             </Table>
         </>
