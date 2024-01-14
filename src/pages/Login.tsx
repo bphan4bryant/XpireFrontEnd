@@ -1,7 +1,42 @@
+import React, { useState } from 'react';
 import './Login.css'
 import Form from 'react-bootstrap/Form';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+
+    const navigate = useNavigate()
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
+    async function handleLogin(e: React.MouseEvent<HTMLButtonElement>) {
+        setError("");
+        e.preventDefault();
+
+        // baseURL: import.meta.env.VITE_BASE_URL + '/users/' + import.meta.env.VITE_DEFAULT_USER //Change default user to actual user field
+        try {
+            const res = await axios.post("http://localhost:5000/login", {
+                "id": username,
+                "password": password
+            });
+            const token = res.data.data
+            // save as a cookie
+            localStorage.setItem("JWT", token);
+            // redirect to main page
+            navigate("/inventory")
+
+        } catch (e: any) {
+            if (e.response.status === 401) {
+                setError("Incorrect Username or Password")
+            }
+            console.error(e);
+            console.error(e.response.status)
+        }
+    }
+
     return (
         <div className='Login-background'>
             <div className="Login-box-container">
@@ -11,7 +46,7 @@ function Login() {
                     {/* <h3 className="Login-title">Sign In</h3> */}
                     <Form>
                         <div className="Login-credentials-title">
-                            <Form.Label htmlFor="inputUsername5">Username</Form.Label>
+                            <Form.Label htmlFor="inputUsername5">Email</Form.Label>
                         </div>
                         <div>
                             <Form.Control
@@ -24,12 +59,17 @@ function Login() {
                                     marginRight: "60px",
                                     marginLeft: "60px"
                                 }}
+                                placeholder='Enter username'
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setUsername(e.target.value);
+                                }}
                             />
                         </div>
                         <div className="Login-credentials-title">
                             <Form.Label htmlFor="inputPassword5">Password</Form.Label>
                         </div>
-                        <div >
+                        <div>
                             <Form.Control
                                 className="Login-entry-box"
                                 width={"100%"}
@@ -41,13 +81,21 @@ function Login() {
                                     marginRight: "60px",
                                     marginLeft: "60px"
                                 }}
+                                placeholder='Enter password'
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setPassword(e.target.value);
+                                }}
                             />
                         </div>
+                        <span className='error'>
+                            {error}
+                        </span>
                         <div className="Login-forgot">
                             <a className="Login-forgot-link" href="/forgot">Forgot Password?</a>
                         </div>
                         <div className="Login-submit">
-                            <button type="submit" className="Login-submit-button">
+                            <button type="submit" className="Login-submit-button" onClick={handleLogin}>
                                 Login
                             </button>
                         </div>
