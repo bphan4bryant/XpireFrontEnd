@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import logo from './IMG_4609-2.png'
+import logo from '../../public/Xpire.png'
+import './CommonNavbar.css'
 
 //
 function CommonNavbar() {
@@ -17,10 +17,10 @@ function CommonNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
-                    <Nav.Link href="/Inventory">Inventory</Nav.Link>
-                    <Nav.Link href="/profile">Profile</Nav.Link>
-                    <Nav.Link href="/forgot">Logout</Nav.Link>
+                    <Nav.Link href="/leaderboard" className="fs-5">Leaderboard</Nav.Link>
+                    <Nav.Link href="/Inventory" className="fs-5">Inventory</Nav.Link>
+                    <Nav.Link href="/profile" className="fs-5">Profile</Nav.Link>
+                    <Nav.Link href="/forgot" className="fs-5">Logout</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
