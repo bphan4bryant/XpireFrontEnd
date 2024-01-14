@@ -4,15 +4,45 @@ import Login from './pages/Login'
 import LandingBg from './components/LandingBg'
 import RegisterPage from './pages/register'
 
+import {
+  createBrowserRouter, RouterProvider,
+} from "react-router-dom";
+import Inventory from './pages/Inventory';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />
+  },
+  {
+    path: "/register",
+    element: <div>Register</div>
+  },
+  {
+    path: "/forgot",
+    element: <div>Forgot Password</div>
+  },
+  {
+    path: "/inventory",
+    element: <Inventory />
+  },
+  {
+    path: "/profile",
+    element: <div>Profile</div>
+  },
+  {
+    path: "/leaderboard",
+    element: <div>Leaderboard</div>
+  },
+
+])
+
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <LandingBg>
-        <RegisterPage />
-      </LandingBg>
-      {/* <Login /> */}
+      <RouterProvider router={router} />
     </>
   )
 }
