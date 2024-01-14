@@ -13,3 +13,8 @@
         margin-right: 10%;
     }
 }
+
+.error {
+    color: #e60000;
+    font-weight: bold;
+}
