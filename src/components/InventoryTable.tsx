@@ -1,7 +1,9 @@
-import { Table } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap'
 import './InventoryTable.css'
 import { Ingredient } from '../types/types.ts'
 import { UnixToDate } from '../utils/functions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons"
 
 function InventoryTable(props: { data: Ingredient[] }) {
 
@@ -28,7 +30,11 @@ function InventoryTable(props: { data: Ingredient[] }) {
                                 <td>{item.points}</td>
                                 <td>{UnixToDate(item.expiration)}</td>
                                 <td>X</td>
-                                <td>Del</td>
+                                <td>
+                                    <Button variant="danger">
+                                        <FontAwesomeIcon icon={faTrashCan} />
+                                    </Button>
+                                </td>
                                 <td>Pencil</td>
                             </tr>
                         )
