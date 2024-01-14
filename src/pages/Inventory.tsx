@@ -50,6 +50,26 @@ function Inventory() {
             .catch((err) => console.log(err))
     }
 
+    const trashIngredient = async (data: Ingredient) => {
+        const url = baseURL + '/ingredients/inventory/delete';
+        const token = localStorage.getItem("JWT") ?? ""
+
+        // delete from inventory
+        const res = await axios.post(url, {
+            "name": data.name,
+            "expiration": data.expiration
+        }, {
+            headers: {
+                "token": token
+            }
+        });
+
+        if (res.status === 202) {
+            window.location.reload();
+        }
+
+    }
+
     useEffect(() => {
         getInventory();
     }, [])
@@ -73,7 +93,7 @@ function Inventory() {
             <Container>
                 <Row>
                     {
-                        Inventory ? <InventoryTable data={Inventory} /> : null
+                        Inventory ? <InventoryTable data={Inventory} deleteHandler={trashIngredient} /> : null
                     }
                 </Row>
             </Container>

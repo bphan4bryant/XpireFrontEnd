@@ -5,8 +5,7 @@ import { UnixToDate } from '../utils/functions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons"
 
-function InventoryTable(props: { data: Ingredient[] }) {
-
+function InventoryTable(props: { data: Ingredient[], deleteHandler: (data: Ingredient) => Promise<void> }) {
     return (
         <>
             <Table>
@@ -31,7 +30,7 @@ function InventoryTable(props: { data: Ingredient[] }) {
                                 <td>{UnixToDate(item.expiration)}</td>
                                 <td>X</td>
                                 <td>
-                                    <Button variant="danger">
+                                    <Button variant="danger" onClick={(e) => props.deleteHandler(item)}>
                                         <FontAwesomeIcon icon={faTrashCan} />
                                     </Button>
                                 </td>
