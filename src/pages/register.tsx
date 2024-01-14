@@ -4,14 +4,27 @@ import ProfilePicture from '../components/profilePicture';
 import React, { useState } from 'react';
 import "./register.css";
 import LandingBg from '../components/LandingBg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 export default function RegisterPage() {
     const [currentProfilePreview, setCurrentProfilePreview] = useState("");
 
+    const [visiblePassword, setVisiblePassword] = useState(false);
 
     function handleProfilePictureChange(e: any) {
         e.preventDefault();
         setCurrentProfilePreview(URL.createObjectURL(e.target.files[0]));
+    }
+
+    function showPassword() {
+        setVisiblePassword(!visiblePassword)
+        // if (visiblePassword == true) {
+        //     setVisiblePassword(false);
+        // }
+        // else {
+        //     setVisiblePassword(true);
+        // }
     }
 
     return (
@@ -28,7 +41,14 @@ export default function RegisterPage() {
                     {/* password */}
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label className="register-entry-title">Password</Form.Label>
-                        <Form.Control className="register-entry-box" type="password" placeholder="Enter password" />
+
+                    <div className="register-pass-wrapper">
+                        <Form.Control className="register-entry-box" type={visiblePassword ? "email" : "password"} placeholder="Enter password"/>
+                    <i onClick={showPassword}>
+                        <FontAwesomeIcon icon={faEye} />
+                    </i>
+                    </div>
+
                     </Form.Group>
 
                     {/* name */}
@@ -49,8 +69,11 @@ export default function RegisterPage() {
                     </Form.Group>
                 </Form>
                 <Button className="register-submit">
-                    Submit
+                    Create Account
                 </Button>
+                <p className="Login-sign-up">
+                    Already have an account? <a className="Login-sign-up-link" href="/">Login here!</a>
+                </p>
             </div>
         </LandingBg>
     )
